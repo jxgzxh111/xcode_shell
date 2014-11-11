@@ -236,7 +236,7 @@ bundleVersion=$(/usr/libexec/PlistBuddy -c "print CFBundleVersion" ${app_infopli
 bundleName=$(/usr/libexec/PlistBuddy -c "print CFBundleName" ${app_infoplist_path})
 
 #IPA名称
-ipa_name="${bundleName}_${bundleShortVersion}_${build_config}${bundleVersion}_$(date +"%Y%m%d")"
+ipa_name="${BUILD_NUMBER}_${bundleName}_${bundleShortVersion}_${build_config}${bundleVersion}_$(date +"%Y%m%d")_svn$SVN_REVISION"
 echo $ipa_name
 
 #xcrun打包
