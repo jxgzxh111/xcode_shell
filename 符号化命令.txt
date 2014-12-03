@@ -1,0 +1,16 @@
+
+一、本文件夹必须包含"Debug"的 .app .dYSM文件 还有个.crash文件， 如果是.ips文件改成.crash后缀
+cd 到这个目录
+
+运行 xcrun atos -o Adventure_coco.app/Adventure_coco -arch armv7 -l 0xbb000 0x00660364
+（例：0   Adventure_coco   0x00660364 0xbb000 + 5919588的符号化）
+
+注意：1.armv7参数 要在crash文件的Binary Images那里看，地址就如上面所示
+      2.Debug .app .dYSM
+
+
+二、1.查看.app uuid ： xcrun dwarfdump --uuid Adventure_coco.app/Adventure_coco 
+    2.查看.crash uuid: grep "Adventure_coco armv" *crash 
+
+
+
